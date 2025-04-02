@@ -1,18 +1,18 @@
 import pytest
-from calculator import add, subtract, multiply, divide
+from main.calculadora import soma, subtracao, multiplicacao, divisao
 
-def test_add():
-    assert add(2, 3) == 5
+def test_soma():
+    assert soma(2, 3) == 5
 
-def test_subtract():
-    assert subtract(5, 3) == 2
+def test_subtracao():
+    assert subtracao(5, 3) == 2
 
-def test_multiply():
-    assert multiply(2, 3) == 6
+def test_multiplicacao():
+    assert multiplicacao(2, 3) == 6
 
-def test_divide():
-    assert divide(6, 2) == 3
+def test_divisao():
+    assert divisao(6, 2) == 3
 
-def test_divide_by_zero():
+def test_divisao_por_zero():
     with pytest.raises(ValueError):
-        divide(5, 0)
+        divisao(5, 0)
