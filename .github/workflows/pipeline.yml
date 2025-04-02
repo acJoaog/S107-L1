@@ -13,6 +13,9 @@ jobs:
     needs: tests
 
     steps:
+      - name: checkout codigo
+        uses: actions/checkout@v4
+        
       - name: Criar pacote
         run: |
           mkdir build
