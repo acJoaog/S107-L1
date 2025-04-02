@@ -7,23 +7,22 @@ on:
     pull_request:
       branches: [ "main" ]
 
-build:
-  runs-on: ubuntu-latest
-  needs: tests
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    needs: tests
 
-  steps:
-    - name: Criar pacote
-      run: |
-        mkdir build
-        cp -r src/* build/
+    steps:
+      - name: Criar pacote
+        run: |
+          mkdir build
+          cp -r src/* build/
 
-    - name: Armazenar artefato de build
-      uses: actions/upload-artifact@v3
-      with:
-        name: build-artifact
-        path: build/
-
-
+      - name: Armazenar artefato de build
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: build/
 
   tests:
     runs-on: ubuntu-latest
@@ -35,12 +34,12 @@ build:
       - name: configurando Python
         uses: actions/setup-python@v4
         with:
-            python-version: '3.9'
+          python-version: '3.9'
 
       - name: instalando dependencias
         run: |
-            python -m pip install --upgrade pip
-            pip install -r src/requirements.txt
+          python -m pip install --upgrade pip
+          pip install -r src/requirements.txt
 
       - name: executar testes
         run: pytest src/testes/teste_01.py --junitxml=report.xml
