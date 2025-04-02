@@ -19,7 +19,7 @@ jobs:
           cp -r src/* build/
 
       - name: Armazenar artefato de build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifact
           path: build/
@@ -29,7 +29,7 @@ jobs:
 
     steps:
       - name: checkout codigo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: configurando Python
         uses: actions/setup-python@v4
