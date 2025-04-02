@@ -26,7 +26,7 @@ jobs:
             pip install -r src/requirements.txt
 
       - name: executar testes
-        run: pytest --junitxml=report.xml
+        run: pytest src/testes/ --junitxml=report.xml
 
       - name: armazenando relatorio de testes
         uses: actions/upload-artifact@v4
