@@ -7,7 +7,24 @@ on:
     pull_request:
       branches: [ "main" ]
 
-jobs:
+build:
+  runs-on: ubuntu-latest
+  needs: tests
+
+  steps:
+    - name: Criar pacote
+      run: |
+        mkdir build
+        cp -r src/* build/
+
+    - name: Armazenar artefato de build
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifact
+        path: build/
+
+
+
   tests:
     runs-on: ubuntu-latest
 
