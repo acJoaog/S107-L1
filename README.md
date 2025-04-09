@@ -4,8 +4,8 @@ Este repositório contém o código-fonte de um projeto fictício de uma calcula
 
 ## Autores
 
-- [João Gabriel dos Santos Silva](https://github.com/acJoaog)
-- [Paulo Vicente de Carvalho Porto](https://github.com/PauloVporto)
+- [João Gabriel Azevedo de Carvalho](https://github.com/acJoaog)
+- [Paulo Vicente Porto dos Santos Silva](https://github.com/PauloVporto)
 
 ## Estrutura do Projeto
 
